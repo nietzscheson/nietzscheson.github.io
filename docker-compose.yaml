@@ -3,7 +3,7 @@ version: '3'
 services:
   jekyll:
     command: jekyll serve livereload
-    image: jekyll/jekyll
+    image: jekyll/jekyll:4.0
     #build: $PWD/.docker/jekyll
     volumes:
       - $PWD:/srv/jekyll
