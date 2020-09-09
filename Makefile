@@ -1,12 +1,11 @@
 .PHONY: 
 
-docker_compose = docker-compose
-docker_compose_file = $(docker_compose) -f docker-compose.yaml
-docker_compose__up_build_e = up --build -d
-
+init: down
+	docker-compose up --build -d
+down:
+	docker-compose down --remove-orphans
 up:
-	$(docker_compose_file) \
-	$(docker_compose__up_build_e) 
+	docker-compose up -d
 rm:
 	docker \
 	rm \
