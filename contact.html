@@ -1,0 +1,16 @@
+---
+layout: page
+title: Contact
+---
+
+<div class="about-text">
+  <p>I am open to consulting projects, technical collaborations, full-time opportunities, and conversations about interesting problems.</p>
+
+  <p>The best way to reach me is by email.</p>
+</div>
+
+<div class="contact-methods">
+  <a href="mailto:{{ site.email }}" class="contact-link">{{ site.email }}</a>
+  {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" class="contact-link" target="_blank" rel="noopener">github.com/{{ site.github_username }}</a>{% endif %}
+  {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" class="contact-link" target="_blank" rel="noopener">@{{ site.twitter_username }}</a>{% endif %}
+</div>

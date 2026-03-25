@@ -1,68 +1,30 @@
-# Site settings
-title:       "Nietzscheson"
-header_title: "Nietzscheson"
-email:       cristianangulonova@gmail.com
-author:      Cristian Angulo Nova
-description: "Personal blog"
-#baseurl:     "/jekyll-bootstrap4-docker"
-#url:         "https://hexlet-boilerplates.github.io"
-date_format: "%-d.%m.%Y"
+# Site
+title: "Cristian Angulo Nova"
+description: "Senior Software Engineer & Technical Leader. Building software, leading teams, and writing about the craft."
+author: Cristian Angulo Nova
+email: cristian@nietzscheson.com
+url: "https://nietzscheson.github.io"
 
-# Google services
-google_analytics: "UA-121172723-1"
-google_verification: ""
-
-# Facebook
-facebook_app_id: "1414002802233483"
-
-# Optional features
-animated:             false
-show_related_posts:   false
-show_post_footer:    true
-show_social_icons:    true
-ajaxify_contact_form: true
-
-# Disqus post comments
-# (leave blank to disable Disqus)
-disqus_shortname: "nietzscheson-github-io"
-
-# Social icons
+# Social
 github_username: nietzscheson
-bitbucket_username:
-stackoverflow_id:
 twitter_username: nietzscheson
-google_plus_id:
-linkedin_username:
-facebook_username:
-angellist_username:
-medium_id:
-bitcoin_url:
-paypal_url:
-flattr_button:
-instagram_username:
 
-# Post sharing icons
-show_sharing_icons: true
-share_text: 'Share this post!'
-# Change to 'true' to enable individual icons
-share_facebook: true
-share_twitter: true
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: "/:title/"
+paginate: 10
+plugins: [jekyll-paginate]
 
-# Build settings
-markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    "/:title/"
-paginate:     1
 sass:
-  compressed: true
+  style: compressed
 
-# Gems
-gems: [jekyll-paginate]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - flake.nix
+  - flake.lock
+  - Dockerfile
+  - docker-compose.yaml
+  - .gems
+  - vendor

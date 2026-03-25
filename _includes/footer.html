@@ -1,9 +1,14 @@
-<footer class="footer text-muted py-4">
+<footer class="site-footer">
   <div class="container">
-    <div class="row mt-1">
-      <div class="col text-center">
-        Copyright 2017-2018.
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="/writing">Posts</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        <a href="{{ '/feed.xml' | prepend: site.baseurl }}">RSS</a>
       </div>
+      <p class="footer-copy">&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
     </div>
   </div>
 </footer>

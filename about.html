@@ -1,56 +1,62 @@
 ---
-layout: default
+layout: page
+title: About
 ---
 
-<div class="row">
-  <div class="col">  
-      <div class="mb-4">
-          <h2>About me</h2>
+<div class="about-text">
+  <p>I am a software engineer focused on backend systems, cloud infrastructure, and applied AI. Over the years, I have built production systems across web platforms, distributed services, and data-driven applications, with a strong emphasis on reliability, clarity, and execution.</p>
 
-          <article>
-          	<p>I'm Cristian. I have being developing software for almost 10 years. Using different tools such as: the ancient Visual Basic, through Flash (with ActionScript),
-          	and reaching web development, event though there was not HTML as we know it today. </p>
-         
-          	<p>Today, I develop applications and web architectures supported by different technologies, programming languajes and tools from <strong>Git</strong> (as version manager, mastering <a href="https://danielkummer.github.io/git-flow-cheatsheet/" target="_blank">Git-flow</a>, <a href="https://guides.github.com/introduction/flow/" target="_blank">Github-flow</a> and <a href="https://docs.gitlab.com/ee/workflow/gitlab_flow.html" taget="_blank"> Gitlab-flow</a> concepts), <strong>PHP</strong> (Symfony, Drupal, Wordpress, Magento, Sylius), <strong>JAVA</strong> (Play Framework, Spring), <strong>Javascript</strong> (JQuery, AngularJs, Angular 2*, React) <strong>databases</strong> (MySQL, Postgrest in an isolate way or using AWS RDS) <strong>virtualization</strong> (Virtual Box, Vagrant, Docker), <strong>CI/CD</strong> (Jenkins (Deprecated for me), Gitlab-CI, Travis-CI) and <strong>web infraestucture</strong> (Google App Engine, Amazon Web Services).</p> 
-          </article>
-      </div>
-      <hr>
-      <div class="mb-4">
-          <h2>Skills I master</h2>
-          <ul>
-		<li>Frontend: Sass, Javascript, JQuery, AngularJS and Angular 2 >.</li>
-		<li>Backend: PHP with Symfony (for apis (REST or GraphQL) development: <a href="https://api-platform.com/" target="_blank">API-Platform</a>).</li>
-		<li>Databases: MySQL and Postgrest (with AWS RDS).</li>
-		<li>Virtualization: VirtualBox, Vagrant and Docker. </li>
-		<li>DevOps tools: Bash, SSH, Ansible, Packer, Terraform, Travis-CI, Gitlab-CI</li>
-		<li>Cloud Services: Amazon Web Services.</li>
-	  </ul>
-      </div>
-      <div class="mb-4">
-          <h2>Interesed in</h2>
-	  <div class="alert alert-info" role="alert">
-  	      Vue.js, React, Python (Django), Ruby (RoR), Java, Scala, Firebase, .Net, Kubernetes, Helm, Machine Learning, Cryptocurrency
-	  </div>
-      </div>
-      <div class="mb-4">
-          <h2>Public personal projects</h2>
-          <ul>
-	      <li><a href="https://github.com/nietzscheson/ra-firebase-client" target="_blank">Firebase client for React Admin</a></li>
-	      <li><a href="https://github.com/nietzscheson/admovil-php" target="_blank">Admovil PHP</a></li>
-	      <li><a href="https://github.com/nietzscheson/docker4sylius" target="_blank">Docker for Sylius</a></li>
-	      <li><a href="https://github.com/nietzscheson/drupcker" target="_blank">Drupker</a></li>
-	      <li><a href="https://github.com/nietzscheson/dockgrant" target="_blank">Dockgrant</a></li>
-	      <li><a href="https://github.com/nietzscheson/docksy" target="_blank">Docksy</a></li>
-	      <li><a href="https://github.com/artesanus/conekta-bundle" target="_blank">ConektaBundle</a></li>
-	      <li><a href=""https://github.com/nietzscheson?tab=repositories target="_blank">Others</a></li>
-	  </ul>
-      </div>
-      <div class="mb-4">
-          <h2>My path</h2>
-          {% include timeline.html %}
-      </div>
+  <p>Today, my work sits at the intersection of software engineering, site reliability, and AI/ML systems. I design and build applications that turn unstructured data into structured intelligence, and I am especially interested in agentic architectures, LLM-powered workflows, and robust backend platforms.</p>
+
+  <p>My technical background includes Python, FastAPI, AWS, Docker, Terraform, distributed systems, and backend architecture. I care about building software that is not only functional, but maintainable, observable, and commercially useful.</p>
+
+  <p>I studied Philosophy, which shaped how I think: clearly, carefully, and with attention to first principles. I write to share what I learn, refine my thinking, and document ideas worth building.</p>
+</div>
+
+<h2>Experience</h2>
+
+<div class="experience-list">
+  {% for item in site.data.experience %}
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>{{ item.title }}</h3>
+      <span class="experience-meta">{{ item.company }} — {{ item.period }}</span>
+    </div>
+    <p>{{ item.description }}</p>
   </div>
+  {% endfor %}
 </div>
 
-  
+{% assign products = site.data.projects | where: "type", "product" %}
+{% if products.size > 0 %}
+<h2>Products</h2>
+
+<div class="experience-list">
+  {% for item in products %}
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>{% if item.url and item.url != "" %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+      <span class="experience-meta">{{ item.context }}</span>
+    </div>
+    <p>{{ item.description }}</p>
+  </div>
+  {% endfor %}
 </div>
+{% endif %}
+
+{% assign oss = site.data.projects | where: "type", "opensource" %}
+{% if oss.size > 0 %}
+<h2>Open Source</h2>
+
+<div class="experience-list">
+  {% for item in oss %}
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>{% if item.url and item.url != "" %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+      <span class="experience-meta">{{ item.context }}</span>
+    </div>
+    <p>{{ item.description }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

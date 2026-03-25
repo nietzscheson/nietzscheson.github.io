@@ -1,0 +1,21 @@
+BUNDLE-LIST(1)							BUNDLE-LIST(1)
+
+
+
+1mNAME0m
+       1mbundle-list 22m- List all the gems in the bundle
+
+1mSYNOPSIS0m
+       1mbundle list 22m[--name-only]
+
+1mDESCRIPTION0m
+       Prints a list of all the gems in the bundle including their version.
+
+1mOPTIONS0m
+       1m--name-only0m
+	      Print only the name of each gem.
+
+
+
+
+				 October 2017			BUNDLE-LIST(1)

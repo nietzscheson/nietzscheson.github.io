@@ -1,0 +1,29 @@
+---
+layout: default
+title: Posts
+---
+
+<section class="section">
+  <div class="container centered">
+    <h2 class="section-title">Posts</h2>
+    <p class="section-subtitle">Notes, essays, and technical posts. I write to learn and to share what I find useful.</p>
+    <div class="writing-grid">
+      {% for post in site.posts %}
+      <article class="writing-card">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          {% if post.image %}
+          <div class="writing-card-image" style="background-image: url('{{ post.image }}')"></div>
+          {% else %}
+          <div class="writing-card-image writing-card-placeholder"></div>
+          {% endif %}
+          <div class="writing-card-content">
+            <span class="writing-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
+            <h3>{{ post.title }}</h3>
+            <p>{% if post.description %}{{ post.description | truncate: 140 }}{% else %}{{ post.excerpt | strip_html | truncate: 140 }}{% endif %}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

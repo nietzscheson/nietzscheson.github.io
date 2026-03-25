@@ -1,0 +1,36 @@
+# Products
+- title: "Rento"
+  context: "AI Platform"
+  url: "https://rento.la"
+  description: "AI-driven tenant validation platform that analyzes financial statements and documents to evaluate rental risk using LLM-powered document processing."
+  type: product
+  featured: true
+
+- title: "Structy"
+  context: "AI / Data Pipeline"
+  url: "https://structry.com"
+  description: "Platform that converts PDFs and documents into structured JSON using LLM pipelines and retrieval architectures. Built with RAG, LangGraph, AWS, Python, and ADK."
+  type: product
+  featured: true
+
+# Open Source
+- title: "docker4sylius"
+  context: "Docker · E-Commerce"
+  url: "https://github.com/nietzscheson/docker4sylius"
+  description: "Docker-based development environment for the Sylius e-commerce platform. Reproducible local setup with containers for PHP, Nginx, and MySQL."
+  type: opensource
+  featured: true
+
+- title: "drupcker"
+  context: "Docker · CMS"
+  url: "https://github.com/nietzscheson/drupcker"
+  description: "Dockerized development environment for Drupal. Containerized workflow for local development, testing, and CI/CD integration."
+  type: opensource
+  featured: true
+
+- title: "docksy"
+  context: "Docker · Sylius"
+  url: "https://github.com/nietzscheson/docksy"
+  description: "Lightweight Docker-based development environment for Sylius projects with minimal configuration."
+  type: opensource
+  featured: false

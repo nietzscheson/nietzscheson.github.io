@@ -2,39 +2,137 @@
 layout: default
 ---
 
-<div class="row">
-  <div class="col">  
-    {% for post in paginator.posts %}
-      {% assign minutes = post.content | strip_html | number_of_words | divided_by: 180 %}
-      {% if minutes == 0 %}
-        {% assign minutes = 1 %}
-      {% endif %}
-      <div class="mb-4">
-
-        <a href="{{ post.url | prepend: site.baseurl }}" class="nocolor">
-          <h2>{{ post.title }}</h2>
-        </a>
-
-        <div>
-          {{ post.content }}
-        </div>
-
-        <div class="meta text-muted">
-          {{ post.date | date_to_long_string }},
-          <span>
-            <i class="fa fa-clock-o ml-1" aria-hidden="true"></i> {{ minutes }} min
-          </span>
-          /
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            permalink
-          </a>
-        </div>
-        
-      </div>
-      <hr>
-  {% endfor %}
+<section class="hero">
+  <div class="container">
+    <p class="hero-label">Software Engineer · AI/ML · Writer</p>
+    <h1 class="hero-title">I Build AI Systems, Engineer Backends, and <mark>Write About the Craft.</mark></h1>
+    <p class="hero-text">Staff Software Engineer specializing in AI/ML systems, Python backend development, and site reliability. I transform unstructured data into structured intelligence.</p>
+    <div class="hero-actions">
+      <a href="/contact" class="btn btn-primary">Let's work together</a>
+      <a href="/writing" class="btn btn-secondary">Read my posts</a>
+    </div>
   </div>
-</div>
+</section>
 
-  
-</div>
+<section class="section" id="expertise">
+  <div class="container centered">
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-subtitle">I specialize in building production AI platforms, robust backend services, and reliable cloud infrastructure.</p>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <h3>AI &amp; ML Systems</h3>
+        <p>LLMs, agentic architectures, RAG pipelines, LangGraph. I build AI applications that move from prototype to production — fine-tuning models, orchestrating agents, and designing retrieval systems.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Backend Engineering</h3>
+        <p>Python, FastAPI, distributed systems. I design and build robust APIs and backend services optimized for performance, reliability, and long-term maintainability.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Cloud &amp; Infra</h3>
+        <p>AWS, Docker, Terraform, CI/CD. I automate deployments, containerize applications, and build infrastructure as code that teams can operate and trust.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Site Reliability</h3>
+        <p>Observability, performance, production operations. I keep distributed applications running reliably — monitoring, incident response, and system resilience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="writing">
+  <div class="container centered">
+    <h2 class="section-title">From My Posts</h2>
+    <p class="section-subtitle">Insights on AI systems, backend engineering, DevOps, and the craft of building software that works.</p>
+    <div class="writing-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="writing-card">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          {% if post.image %}
+          <div class="writing-card-image" style="background-image: url('{{ post.image }}')"></div>
+          {% else %}
+          <div class="writing-card-image writing-card-placeholder"></div>
+          {% endif %}
+          <div class="writing-card-content">
+            <span class="writing-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
+            <h3>{{ post.title }}</h3>
+            <p>{% if post.description %}{{ post.description | truncate: 100 }}{% else %}{{ post.excerpt | strip_html | truncate: 100 }}{% endif %}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-actions">
+      <a href="/writing" class="btn btn-secondary">All posts</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="container container-narrow centered">
+    <h2 class="section-title">Selected Work</h2>
+    <p class="section-subtitle">Roles where I have made a meaningful impact.</p>
+  </div>
+  <div class="container container-narrow">
+    <div class="project-list">
+      {% for item in site.data.experience %}
+      {% if item.featured %}
+      <article class="project-item">
+        <h3>{{ item.title }}</h3>
+        <p class="project-context">{{ item.company }} — {{ item.period }}</p>
+        <p>{{ item.description }}</p>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="projects">
+  <div class="container centered">
+    <h2 class="section-title">My Projects</h2>
+    <p class="section-subtitle">Products I am building and open-source tools I maintain.</p>
+    <div class="projects-grid">
+      {% assign products = site.data.projects | where: "type", "product" | where: "featured", true %}
+      {% for item in products %}
+      <div class="project-card project-card--product">
+        <div class="project-card-badge">Product</div>
+        <h3>{% if item.url and item.url != "" %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+        <p class="project-context">{{ item.context }}</p>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+      {% assign oss = site.data.projects | where: "type", "opensource" | where: "featured", true %}
+      {% for item in oss %}
+      <div class="project-card project-card--oss">
+        <div class="project-card-badge project-card-badge--oss">Open Source</div>
+        <h3>{% if item.url and item.url != "" %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+        <p class="project-context">{{ item.context }}</p>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container container-narrow centered">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-text">
+      <p>I design and build AI-powered systems that transform unstructured data into structured intelligence. I studied Philosophy — which shaped how I think: clearly, carefully, and with attention to first principles — before spending over a decade building software professionally.</p>
+      <p>Today my work sits at the intersection of software engineering, site reliability, and AI/ML systems. I care about building software that is not only functional, but maintainable, observable, and commercially useful.</p>
+    </div>
+    <div class="section-actions">
+      <a href="/about" class="btn btn-secondary">More about me</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Let's Work Together</h2>
+      <p>I am open to consulting projects, technical collaborations, and interesting problems. If you think we could be a good fit, I would like to hear from you.</p>
+      <a href="/contact" class="btn btn-primary">Start a conversation</a>
+    </div>
+  </div>
+</section>

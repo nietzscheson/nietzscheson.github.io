@@ -1,0 +1,23 @@
+current directory: /Users/cristian.angulo/projects/nietzscheson/nietzscheson.github.io/.gems/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+/nix/store/88sazm3fj9kabg4pxmnjc53cx0syp8fk-ruby-3.4.8/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/cristian.angulo/projects/nietzscheson/nietzscheson.github.io/.gems/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260325-34001-8weud7 sitelibdir\=./.gem.20260325-34001-8weud7 clean
+
+current directory: /Users/cristian.angulo/projects/nietzscheson/nietzscheson.github.io/.gems/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260325-34001-8weud7 sitelibdir\=./.gem.20260325-34001-8weud7
+compiling ruby_http_parser.c
+ruby_http_parser.c:373:17: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'long' [-Wsign-compare]
+  373 |     if (nparsed < len)
+      |         ~~~~~~~ ^ ~~~
+1 warning generated.
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+
+current directory: /Users/cristian.angulo/projects/nietzscheson/nietzscheson.github.io/.gems/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260325-34001-8weud7 sitelibdir\=./.gem.20260325-34001-8weud7 install
+install -c -p -m 755 ruby_http_parser.bundle ./.gem.20260325-34001-8weud7
+
+current directory: /Users/cristian.angulo/projects/nietzscheson/nietzscheson.github.io/.gems/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260325-34001-8weud7 sitelibdir\=./.gem.20260325-34001-8weud7 clean

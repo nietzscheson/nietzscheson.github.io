@@ -1,0 +1,35 @@
+- title: "Staff Systems & Software Engineer, AI/ML Team"
+  company: "Aviva"
+  period: "Aug 2025–Present"
+  description: "Building AI and ML systems, including agent-based workflows, LLM fine-tuning, and MLOps pipelines to move AI applications into production reliably."
+  featured: true
+
+- title: "Senior Software Engineer | Python & Site Reliability Engineer"
+  company: "Globant"
+  period: "Jul 2023–Aug 2025"
+  description: "Designed and developed robust APIs using FastAPI for optimal performance and efficient HTTP request handling. Worked across backend engineering and site reliability, operating distributed applications in production."
+  featured: true
+
+- title: "Technical Lead"
+  company: "Crehana"
+  period: "Jul 2022–Dec 2022"
+  description: "Led engineering execution across backend and platform initiatives, helping teams deliver reliable systems and move faster with clearer technical direction."
+  featured: true
+
+- title: "Senior Software Engineer"
+  company: "Crehana"
+  period: "Dec 2021–Jun 2022"
+  description: "Built backend services using Python and Flask, contributing to application architecture, delivery, and engineering quality across the stack."
+  featured: false
+
+- title: "Senior Software Engineer"
+  company: "Konfio"
+  period: "Nov 2020–Dec 2021"
+  description: "Built backend services and applications using PHP and Vue.js, contributing to product development and platform reliability."
+  featured: false
+
+- title: "Software Engineer"
+  company: "TrueHome"
+  period: "Jan 2020–Dec 2020"
+  description: "Built automation solutions and cloud-based applications on AWS, delivering contract engineering work across multiple projects."
+  featured: false
