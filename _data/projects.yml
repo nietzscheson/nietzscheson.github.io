@@ -19,14 +19,14 @@
   url: "https://github.com/nietzscheson/docker4sylius"
   description: "Docker-based development environment for the Sylius e-commerce platform. Reproducible local setup with containers for PHP, Nginx, and MySQL."
   type: opensource
-  featured: true
+  featured: false
 
 - title: "drupcker"
   context: "Docker · CMS"
   url: "https://github.com/nietzscheson/drupcker"
   description: "Dockerized development environment for Drupal. Containerized workflow for local development, testing, and CI/CD integration."
   type: opensource
-  featured: true
+  featured: false
 
 - title: "docksy"
   context: "Docker · Sylius"
