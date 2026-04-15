@@ -1,32 +1,32 @@
 /* ================================================
    Design System — Cristian Angulo Nova
-   Dark theme · Compact · Card-based · Editorial accents
+   Light theme · Compact · Card-based · Editorial accents
    ================================================ */
 
 /* --- Tokens --- */
 :root {
-  /* Dark neutrals */
-  --color-bg: #0D0D0C;
-  --color-surface: #151514;
-  --color-card: #1A1918;
-  --color-text: #EDEBE7;
-  --color-body: #B8B3AD;
-  --color-muted: #8A8580;
-  --color-light: #5F5A56;
-  --color-border: #2A2826;
+  /* Light neutrals */
+  --color-bg: #FAFAF8;
+  --color-surface: #F2F1EE;
+  --color-card: #FFFFFF;
+  --color-text: #1A1918;
+  --color-body: #4D4944;
+  --color-muted: #7A7570;
+  --color-light: #A09B96;
+  --color-border: #E2E0DC;
 
-  /* Accent — lighter cobalt for dark bg readability */
-  --color-accent: #7BA3C9;
-  --color-accent-hover: #9ABDD8;
+  /* Accent — deeper cobalt for light bg readability */
+  --color-accent: #2E6B9E;
+  --color-accent-hover: #1D5685;
 
-  /* CTA — acid-lime */
-  --color-cta: #C8E64A;
-  --color-cta-hover: #D6F058;
-  --color-cta-text: #0D0D0C;
+  /* CTA — olive-lime */
+  --color-cta: #5E8E22;
+  --color-cta-hover: #4E7A1A;
+  --color-cta-text: #FFFFFF;
 
   /* Micro-accents */
-  --color-lavender: #C4B5D8;
-  --color-coral: #E07461;
+  --color-lavender: #8B6DB0;
+  --color-coral: #D05A47;
 
   /* Typography */
   --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -53,10 +53,10 @@
   --radius-lg: 16px;
   --radius-full: 100px;
 
-  /* Shadows (subtle on dark) */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  /* Shadows (soft on light) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Reset --- */
@@ -147,7 +147,7 @@ small {
 }
 
 mark {
-  background: linear-gradient(to top, rgba(200, 230, 74, 0.3) 40%, transparent 40%);
+  background: linear-gradient(to top, rgba(94, 142, 34, 0.2) 40%, transparent 40%);
   color: inherit;
   padding: 0 0.05em;
 }
@@ -434,7 +434,7 @@ mark {
 }
 
 .writing-card-placeholder {
-  background: linear-gradient(135deg, #161A12 0%, #121620 100%);
+  background: linear-gradient(135deg, #EEF0EC 0%, #ECF0F5 100%);
 }
 
 .writing-card-content {
@@ -522,15 +522,15 @@ mark {
   padding: 0.25em 0.7em;
   border-radius: var(--radius-full);
   margin-bottom: var(--space-sm);
-  background: rgba(200, 230, 74, 0.12);
+  background: rgba(94, 142, 34, 0.1);
   color: var(--color-cta);
-  border: 1px solid rgba(200, 230, 74, 0.2);
+  border: 1px solid rgba(94, 142, 34, 0.2);
 }
 
 .project-card-badge--oss {
-  background: rgba(123, 163, 201, 0.1);
+  background: rgba(46, 107, 158, 0.08);
   color: var(--color-accent);
-  border-color: rgba(123, 163, 201, 0.2);
+  border-color: rgba(46, 107, 158, 0.18);
 }
 
 /* --- Project List (work section) --- */
@@ -595,13 +595,13 @@ mark {
 }
 
 .cta-box h2::after {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.3);
   margin-left: auto;
   margin-right: auto;
 }
 
 .cta-box p {
-  color: rgba(13, 13, 12, 0.65);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 0.95rem;
   max-width: 440px;
   margin: 0 auto var(--space-xl);
@@ -609,14 +609,14 @@ mark {
 }
 
 .cta-box .btn-primary {
-  background: var(--color-bg);
+  background: var(--color-card);
   color: var(--color-text);
-  border-color: var(--color-bg);
+  border-color: var(--color-card);
 }
 
 .cta-box .btn-primary:hover {
-  background: var(--color-surface);
-  border-color: var(--color-surface);
+  background: var(--color-bg);
+  border-color: var(--color-bg);
 }
 
 /* --- Footer --- */
@@ -800,8 +800,8 @@ code {
 }
 
 pre {
-  background: #0A0A09;
-  color: #D4D4D4;
+  background: #F6F6F4;
+  color: #24292E;
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
@@ -819,41 +819,41 @@ pre code {
   font-size: inherit;
 }
 
-/* Rouge syntax highlighting */
-.highlight { background: #0A0A09; border-radius: var(--radius-md); }
+/* Rouge syntax highlighting — light theme */
+.highlight { background: #F6F6F4; border-radius: var(--radius-md); }
 .highlight .c,
 .highlight .cm,
 .highlight .c1,
-.highlight .cs { color: #6A9955; font-style: italic; }
+.highlight .cs { color: #6A737D; font-style: italic; }
 .highlight .k,
 .highlight .kd,
 .highlight .kn,
 .highlight .kp,
-.highlight .kr { color: #C586C0; }
+.highlight .kr { color: #AF00DB; }
 .highlight .s,
 .highlight .s1,
 .highlight .s2,
 .highlight .sb,
 .highlight .sc,
 .highlight .sd,
-.highlight .sh { color: #CE9178; }
+.highlight .sh { color: #A31515; }
 .highlight .mi,
 .highlight .mf,
 .highlight .mh,
-.highlight .mo { color: #B5CEA8; }
-.highlight .na { color: #9CDCFE; }
-.highlight .nb { color: #D4D4D4; }
+.highlight .mo { color: #098658; }
+.highlight .na { color: #0070C1; }
+.highlight .nb { color: #24292E; }
 .highlight .nc,
-.highlight .nn { color: #4EC9B0; }
-.highlight .nf { color: #DCDCAA; }
-.highlight .no { color: #B5CEA8; }
-.highlight .nt { color: #569CD6; }
+.highlight .nn { color: #267F99; }
+.highlight .nf { color: #795E26; }
+.highlight .no { color: #098658; }
+.highlight .nt { color: #800000; }
 .highlight .o,
-.highlight .ow { color: #D4D4D4; }
-.highlight .p { color: #D4D4D4; }
+.highlight .ow { color: #24292E; }
+.highlight .p { color: #24292E; }
 .highlight .nv,
 .highlight .vi,
-.highlight .vg { color: #9CDCFE; }
+.highlight .vg { color: #0070C1; }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
