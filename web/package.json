@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "lerna run dev --stream",
+    "dev": "lerna run dev --stream --parallel",
+    "build": "lerna run build --stream",
     "storybook": "lerna run storybook --scope @nietzscheson/ui --stream",
     "build-storybook": "lerna run build-storybook --stream",
     "typecheck": "lerna run typecheck --stream"

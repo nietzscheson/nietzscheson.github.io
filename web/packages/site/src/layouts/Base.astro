@@ -1,0 +1,73 @@
+---
+import "@nietzscheson/ui/styles.css";
+import { SiteHeader, SiteFooter, content } from "@nietzscheson/ui";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  /** Nav href to mark as current (articles). */
+  current?: string;
+  /** Mark the nav item of the section on screen (one-page home). */
+  spy?: boolean;
+  type?: "website" | "article";
+}
+
+const { profile, nav } = content;
+const {
+  title,
+  description = "Staff Software Engineer building AI systems, LLM document pipelines and reliable Python backends.",
+  image,
+  current,
+  spy = false,
+  type = "website",
+} = Astro.props;
+
+const fullTitle = title ? `${title} | ${profile.name}` : `${profile.name}, ${profile.role}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image ?? profile.avatar, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/images/favicon.ico/apple-icon-180x180.png" />
+    <link rel="alternate" type="application/rss+xml" title={`${profile.name}, writing`} href="/feed.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#f4f6f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1719" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+    <meta name="twitter:site" content="@nietzscheson" />
+    <script is:inline>
+      // Apply a saved theme before first paint to avoid a flash.
+      try {
+        const t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="top" class="flex min-h-dvh flex-col bg-bg">
+      <a
+        href="#main"
+        class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-on-accent"
+      >
+        Skip to content
+      </a>
+      <SiteHeader client:load items={nav} current={current} spy={spy} avatar={profile.avatar} />
+      <main id="main" class="flex-1"><slot /></main>
+      <SiteFooter role={profile.role} nav={[...nav, { label: "RSS", href: "/feed.xml" }]} social={profile.social} />
+    </div>
+  </body>
+</html>
