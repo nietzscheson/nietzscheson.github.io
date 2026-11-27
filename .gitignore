@@ -3,3 +3,6 @@ _site/
 _deleted_posts/
 .DS_Store
 .sass-cache
+node_modules/
+storybook-static/
+*.log
