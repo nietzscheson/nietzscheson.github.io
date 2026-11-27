@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Microservices Federation (GraphQL, Python and Apollo)
-description: Modern SRE work is no longer about just reacting to alerts. It is about speed of investigation, context, and automation of toil.
+description: Exposing one unified GraphQL API over Python microservices with Apollo Federation, without coupling the services together.
 image: /images/posts/microservices-federation.png
 published: True
 ---
