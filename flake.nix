@@ -18,6 +18,7 @@
             git
             pkg-config
             libyaml
+            nodejs_24
           ];
 
           buildInputs = with pkgs; [
@@ -27,7 +28,7 @@
           shellHook = ''
             export GEM_HOME="$PWD/.gems"
             export PATH="$GEM_HOME/bin:$PATH"
-            echo "Jekyll dev shell ready — run 'bundle install' then 'bundle exec jekyll serve --livereload'"
+            echo "Dev shell ready — new site: 'cd web && npm install && npm run dev' · legacy Jekyll: 'bundle exec jekyll serve'"
           '';
         };
       });

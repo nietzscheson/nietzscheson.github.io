@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import { Button } from "@nietzscheson/ui";
+---
+
+<Base title="Page not found">
+  <section class="mx-auto w-full max-w-page px-4 py-24 sm:px-8 md:py-32">
+    <div class="md:ml-[calc(12rem+3rem)]">
+      <p class="text-sm text-muted">404</p>
+      <h1 class="mt-2 font-serif text-3xl font-light tracking-[-0.02em] text-ink md:text-4xl">This page doesn’t exist.</h1>
+      <p class="mt-4 max-w-measure text-lg text-muted">It may have moved when the site became a single page.</p>
+      <div class="mt-8"><Button href="/" size="lg">Go to the home page</Button></div>
+    </div>
+  </section>
+</Base>
