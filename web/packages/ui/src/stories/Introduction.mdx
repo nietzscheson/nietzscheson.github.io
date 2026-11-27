@@ -1,0 +1,36 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# nietzscheson — design system
+
+The foundation brand for **Cristian Angulo Nova**: a staff software engineer who started in philosophy.
+
+## The idea
+
+Nietzsche wrote in **numbered aphorisms** and thought on walks around the lakes of the Engadin, at Sils-Maria.
+The brand borrows both: a cool alpine palette (lake, stone, snow) and the **§** as its signature mark.
+The "How I work" principles are set as citable aphorisms (`/#§3`), because the numbering is a real citation convention, not decoration.
+
+## Structure (Atomic Design)
+
+| Level | What lives here |
+| --- | --- |
+| **Foundations** | Color, type, spacing, motion tokens (`src/styles/global.css`) |
+| **Atoms** | Button, TextLink, Heading, Text, Avatar, Icon, Tag, SectionMark, Wordmark, Divider |
+| **Molecules** | NavLink, SocialLinks, ThemeToggle, SectionHeader, ServiceItem, Aphorism, RoleItem, PostItem, ProjectItem, CompanyList |
+| **Organisms** | SiteHeader (with scroll-spy), Hero, WorkedWith, AboutSection, ServicesSection, PrinciplesSection, ProjectsSection, ExperienceSection (timeline), WritingSection, ContactCTA, SiteFooter |
+| **Templates** | SiteLayout, ArticleTemplate |
+| **Pages** | Home (the whole site, one page) and Article |
+
+## Rules
+
+- **Spend boldness in one place.** The § aphorisms are the memorable element; everything else stays quiet.
+- **Structure is information.** Borders separate items in lists; there are no decorative cards or shadows.
+- **One page.** Everything lives on the home page; the nav scrolls to sections and highlights the one on screen. Articles keep their own URLs so they can be shared and indexed.
+- **Bands break the rhythm.** About and Contact sit on a raised surface so a long page has landmarks.
+- **One motion moment.** The hero headline settles line by line. Nothing else animates on its own. Reduced motion is respected.
+- **Sentence case everywhere.** No all-caps eyebrows, no monospace labels, no arrows appended to links (external links get ↗ because they leave the site).
+- **Semantic tokens only.** Components use `bg`, `ink`, `body`, `muted`, `line`, `accent`; dark mode swaps the tokens, never the components.
+
+Use the theme switcher in the toolbar to check every story in light and dark.
