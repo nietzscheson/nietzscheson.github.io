@@ -6,7 +6,7 @@ export const profile = {
   handle: "nietzscheson",
   role: "Staff Software Engineer, AI/ML",
   location: "México",
-  avatar: "https://github.com/nietzscheson.png",
+  avatar: "/images/profile.jpg",
   email: "cristian@nietzscheson.com",
   headline: ["I build AI systems", "that turn documents", "into decisions."],
   intro:
